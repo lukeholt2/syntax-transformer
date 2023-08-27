@@ -1,0 +1,32 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net6.0</TargetFramework>
+    <Version>1.0.0</Version>
+    <AssemblyName>SyntaxTransformer</AssemblyName>
+    <Nullable>enable</Nullable>
+    <PackAsTool>true</PackAsTool>
+    <ToolCommandName>syntax-transformer</ToolCommandName>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Microsoft.CodeAnalysis.CSharp" />
+    <None Remove="Microsoft.CodeAnalysis.Analyzers" />
+    <None Remove="CodeFixers\" />
+    <None Remove="Microsoft.CodeAnalysis.CSharp.Workspaces" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Http" Version="2.2.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.2.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp" Version="4.2.0" />
+    <PackageReference Include="Microsoft.CodeAnalysis.Analyzers" Version="3.3.3">
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+      <PrivateAssets>all</PrivateAssets>
+    </PackageReference>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Workspaces" Version="4.2.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Transformers\" />
+  </ItemGroup>
+</Project>
